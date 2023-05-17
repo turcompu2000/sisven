@@ -9,7 +9,11 @@ import Customers from '../views/customers';
 import EditarPay_mode from '../components/pay_mode/EditarPay_mode';
 import NewPay_mode from '../components/pay_mode/NewPay_mode';
 import Pay_mode from '../views/pay_mode';
+import EditarProducts from '../components/products/EditarProducts';
+import NewProducts from '../components/products/NewProducts';
 import Products from '../views/products';
+
+
 const routes = [
   {
     path: '/',
@@ -68,7 +72,16 @@ const routes = [
     name: 'Products',
     component: Products
   },
-  
+  {
+    path: '/editar-products/:id',
+    name: 'EditarProducts',
+    component: EditarProducts
+  },
+  {
+    path: '/add-Products/',
+    name: 'NewProducts',
+    component: NewProducts
+  },
   {
     path: '/about',
     name: 'about',
