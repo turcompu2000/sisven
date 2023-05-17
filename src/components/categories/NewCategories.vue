@@ -16,15 +16,15 @@
                 </div> 
              </div>    
 
-            <div class="row mb-3">
-                <label for="id" class="form-label">Nombre : </label>
+              <div class="row mb-3">
+                <label for="name" class="form-label">Nombre : </label>
                 <div class="input-group">
                     <div class="input-group-text"><font-awesome-icon icon="building" /></div>
                     <input type="text" class="form-control" id="name" placeholder="nombre categories" 
                     v-model='categories.name'>
                 </div>           
-             </div>
-             <div class="row mb-3">
+               </div>
+               <div class="row mb-3">
                 <label for="description" class="form-label">descripcion : </label>
                 <div class="input-group">
                     <div class="input-group-text"><font-awesome-icon icon="bank" /></div>

@@ -3,9 +3,9 @@ import HomeView from '../views/HomeView.vue';
 import EditarCategories from '../components/categories/EditarCategories';
 import NewCategories from '../components/categories/NewCategories';
 import Categories from '../views/categories';
+import EditarCustomers from '../components/customers/EditarCustomers';
+import NewCustomers from '../components/customers/NewCustomers';
 import Customers from '../views/customers';
-import Details from '../views/details';
-import Invoices from '../views/invoices';
 import Products from '../views/products';
 import Pay_mode from '../views/pay_mode';
 
@@ -30,25 +30,20 @@ const routes = [
     name: 'NewCategories',
     component: NewCategories
   },
-
-
-
-
-
   {
     path: '/customers',
     name: 'Customers',
     component: Customers
   },
   {
-    path: '/details',
-    name: 'Details',
-    component: Details
+    path: '/add-Customers/',
+    name: 'NewCustomers',
+    component: NewCustomers
   },
   {
-    path: '/invoices',
-    name: 'Invoices',
-    component: Invoices
+    path: '/editar-customers/:id',
+    name: 'EditarCustomers',
+    component: EditarCustomers
   },
   {
     path: '/products',
