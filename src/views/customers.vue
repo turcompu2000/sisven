@@ -1,6 +1,11 @@
 <template>
     <div class="container">
-        <h1>listado</h1>
+        <h1>listado
+            <button @click="newCustomers()"
+            class="btn btn-success mx-2">
+            <font-awesome-icon icon="plus" />  
+            </button>
+        </h1>
         <table class="table">
             <thead>
                 <tr>
@@ -24,19 +29,56 @@
                     <td>{{ customers.birthday}}</td>
                     <td>{{ customers.phone_number}}</td>
                     <td>{{ customers.email}}</td>
-                </tr>
+                    <td>
+                    <button @click="deleteCustomers(customers.id)"
+                      class="btn btn-danger mx-2">
+                      <font-awesome-icon icon="trash" />  
+                    </button>
+                    <button @click="editCustomers(customers.id)"
+                      class="btn btn-warning mx-2">
+                      <font-awesome-icon icon="pencil" />  
+                    </button>
+                </td>
+              </tr>
+
             </tbody>
         </table>
     </div>
 </template>
 <script>
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 export default{
     name:'Customers',
     data(){
         return{
             customers:[]
+        }
+    },
+    methods:{
+        deleteCustomers(codigo){
+            Swal.fire({
+                title:`Do you want to delete the comuna with id ${codigo}?`,
+                showCancelButton: true,
+                confirmButtonText: 'Delete',
+            }).then((result) => {
+                    if(result.isConfirmed){
+                        axios.delete(`http://127.0.0.1:8000/api/customers/${codigo}`)
+                        .then(response => {
+                            if (response.data.success){
+                                Swal.fire('Deleted!! ', '','success')
+                                this.customers=response.data.customers
+                            }
+                        })
+                    }
+                })
+        },
+        editCustomers(id){
+            this.$router.push({name: 'EditarCustomers', params:{ id: `${id}`}})
+        },
+        newCustomers(){
+            this.$router.push({name: 'NewCustomers'});
         }
     },
     mounted(){
