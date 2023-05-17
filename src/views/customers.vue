@@ -10,6 +10,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">id</th>
                     <th scope="col">document_number</th>
                     <th scope="col">first_name</th>
                     <th scope="col">last_name</th>
@@ -22,6 +23,7 @@
             <tbody>
                 <tr v-for="(customers,index) in customers" :key="index">
                     <th scope="row">{{index+1}}</th>
+                    <td>{{ customers.id}}</td>
                     <td>{{ customers.document_number}}</td>
                     <td>{{ customers.first_name}}</td>
                     <td>{{ customers.last_name}}</td>

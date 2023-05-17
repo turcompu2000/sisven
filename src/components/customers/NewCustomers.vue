@@ -12,7 +12,7 @@
                     <div class="input-group">
                     <div class="input-group-text"><font-awesome-icon icon="tag" /></div>
                     <input type="text" class="form-control" id="id" placeholder="codigo customers" disabled 
-                     v-model="customers.id">
+                    v-model="customers.id">
                     </div> 
                  </div>    
 
@@ -31,11 +31,19 @@
                 <label for="first_name" class="form-label">descripcion : </label>
                 <div class="input-group">
                     <div class="input-group-text"><font-awesome-icon icon="bank" /></div>
-                    <input type="text" class="form-control" id="first_name" placeholder="first_name" 
+                    <input type="text" class="form-control" id="first_name" placeholder="first_name"
                     v-model="customers.first_name">
                 </div>
               </div>
 
+              <div class="row mb-3">
+                <label for="last_name" class="form-label">descripcion : </label>
+                <div class="input-group">
+                    <div class="input-group-text"><font-awesome-icon icon="bank" /></div>
+                    <input type="text" class="form-control" id="last_name" placeholder="last_name"
+                    v-model="customers.last_name">
+                </div>
+              </div>
               <div class="row mb-3">
                 <label for="address" class="form-label">descripcion : </label>
                 <div class="input-group">
@@ -118,4 +126,5 @@ export default{
         }
     },
 }
-</Script>
+</script>
+
