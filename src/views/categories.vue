@@ -23,11 +23,11 @@
                 <td>{{categories.description}}</td>
                 <td>
                     <button @click="deleteCategories(categories.id)"
-                      class="btn btn-success mx-2">
+                      class="btn btn-danger mx-2">
                       <font-awesome-icon icon="trash" />  
                     </button>
                     <button @click="editCategories(categories.id)"
-                      class="btn btn-success mx-2">
+                      class="btn btn-warning mx-2">
                       <font-awesome-icon icon="pencil" />  
                     </button>
                 </td>
@@ -45,6 +45,31 @@ export default{
     data(){
         return{
             categories:[]
+        }
+    },
+    methods:{
+        deleteCategories(codigo){
+            Swal.fire({
+                title:`Do you want to delete the comuna with id ${codigo}?`,
+                showCancelButton: true,
+                confirmButtonText: 'Delete',
+            }).then((result) => {
+                    if(result.isConfirmed){
+                        axios.delete(`http://127.0.0.1:8000/api/categories/${codigo}`)
+                        .then(response => {
+                            if (response.data.success){
+                                Swal.fire('Deleted!! ', '','success')
+                                this.categories=response.data.categories
+                            }
+                        })
+                    }
+                })
+        },
+        editCategories(id){
+            this.$router.push({name: 'EditarCategories', params:{ id: `${id}`}})
+        },
+        newCategories(){
+            this.$router.push({name: 'NewCategories'});
         }
     },
     mounted(){
