@@ -4,11 +4,12 @@ import EditarCategories from '../components/categories/EditarCategories';
 import NewCategories from '../components/categories/NewCategories';
 import Categories from '../views/categories';
 import EditarCustomers from '../components/customers/EditarCustomers';
-import NewCustomers from '../components/customers/NewCustomers';
+import NewCustomers from '../components/customers/NewCustomers'; 
 import Customers from '../views/customers';
-import Products from '../views/products';
+import EditarPay_mode from '../components/pay_mode/EditarPay_mode';
+import NewPay_mode from '../components/pay_mode/NewPay_mode';
 import Pay_mode from '../views/pay_mode';
-
+import Products from '../views/products';
 const routes = [
   {
     path: '/',
@@ -36,25 +37,38 @@ const routes = [
     component: Customers
   },
   {
-    path: '/add-Customers/',
-    name: 'NewCustomers',
-    component: NewCustomers
-  },
-  {
     path: '/editar-customers/:id',
     name: 'EditarCustomers',
     component: EditarCustomers
   },
   {
-    path: '/products',
-    name: 'Products',
-    component: Products
+    path: '/add-Customers/',
+    name: 'NewCustomers',
+    component: NewCustomers
   },
+
   {
     path: '/pay_mode',
     name: 'Pay_mode',
     component: Pay_mode
   },
+  {
+    path: '/editar-pay_mode/:id',
+    name: 'EditarPay_mode',
+    component: EditarPay_mode
+  },
+  {
+    path: '/add-Pay_mode/',
+    name: 'NewPay_mode',
+    component: NewPay_mode
+  },
+
+  {
+    path: '/products',
+    name: 'Products',
+    component: Products
+  },
+  
   {
     path: '/about',
     name: 'about',

@@ -65,7 +65,7 @@ export default{
                 })
         },
         editPay_mode(id){
-            this.$router.push({name: 'EditarPay_mode', params:{ id: `${id}`}})
+            this.$router.push({name: 'EditarPay_mode', params:{ id:`${id}`}})
         },
         newPay_mode(){
             this.$router.push({name: 'NewPay_mode'});
